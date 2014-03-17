@@ -25,15 +25,16 @@ class IniParser {
     /**
      * @var boolean 
      */
-    public $use_array_object = true;
+    public $use_array_object;
 
     /**
      * @param string $file
-     *
+     * @param boolean $use_array_object
      * @return IniParser
      */
-    public function __construct($file = null) {
+    public function __construct($file = null, $use_array_object = true) {
         if ($file !== null) {
+            $this->use_array_object = $use_array_object;
             $this->setFile($file);
         }
     }
